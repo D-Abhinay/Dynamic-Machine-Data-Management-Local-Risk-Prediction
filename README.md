@@ -1,5 +1,5 @@
 Dynamic Machine Data Management & Local Risk Prediction
-GitHub Repository: https://github.com/D-Abhinay/Dynamic-Machine-Data-Management-Local-Risk-Prediction
+GitHub Repository: https://github.com/D-Abhinay/Dynamic-Machine-Data-Management-Local-Risk-Prediction/tree/master
 A simple web application to manage machine information with user-configurable fields and to predict a machine’s risk level (Low / Medium / High) using a local Python Machine Learning model.
 No cloud AI services or external AI APIs are used. Everything runs on your own machine.
 ________________________________________
