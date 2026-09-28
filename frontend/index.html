@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Machine Risk Intelligence
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                ⚙
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    MachineRisk
+                </h1>
+
+                <span>
+                    INTELLIGENCE
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <div class="nav-section-title">
+                MAIN
+            </div>
+
+            <a
+                href="#dashboard"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    ◈
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="#machines"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Machines
+                </span>
+
+            </a>
+
+
+            <a
+                href="#fields"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Field Configuration
+                </span>
+
+            </a>
+
+
+            <a
+                href="#prediction"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Risk Prediction
+                </span>
+
+            </a>
+
+
+            <div class="nav-section-title">
+                MACHINE LEARNING
+            </div>
+
+
+            <a
+                href="#models"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ◇
+                </span>
+
+                <span>
+                    ML Models
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="local-badge">
+
+                <span class="local-dot"></span>
+
+                <div>
+
+                    <strong>
+                        Local AI Engine
+                    </strong>
+
+                    <small>
+                        No external APIs
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN APPLICATION
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP BAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div class="mobile-brand">
+
+                <div class="brand-logo">
+                    ⚙
+                </div>
+
+                <strong>
+                    MachineRisk
+                </strong>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="api-status">
+
+                    <span
+                        class="status-dot"
+                        id="statusDot"
+                    ></span>
+
+                    <span id="apiStatus">
+                        Checking API...
+                    </span>
+
+                </div>
+
+
+                <div class="user-profile">
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div class="user-info">
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <small>
+                            Local Environment
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+        <section
+            id="dashboard"
+            class="page-section"
+        >
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        MACHINE OPERATIONS
+                    </span>
+
+                    <h2>
+                        Machine Risk Intelligence
+                    </h2>
+
+                    <p>
+                        Monitor machine parameters, manage
+                        dynamic fields, and run local ML
+                        risk predictions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- KPI CARDS -->
+
+            <div class="kpi-grid">
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-card-top">
+
+                        <div class="kpi-icon purple">
+                            ◈
+                        </div>
+
+                        <span class="kpi-label">
+                            CONFIGURED FIELDS
+                        </span>
+
+                    </div>
+
+                    <div class="kpi-value">
+                        <strong id="fieldCount">
+                            0
+                        </strong>
+                    </div>
+
+                    <div class="kpi-footer">
+                        Dynamic machine parameters
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-card-top">
+
+                        <div class="kpi-icon blue">
+                            ⚙
+                        </div>
+
+                        <span class="kpi-label">
+                            MACHINES
+                        </span>
+
+                    </div>
+
+                    <div class="kpi-value">
+
+                        <strong id="machineCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="kpi-footer">
+                        Registered machine records
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-card-top">
+
+                        <div class="kpi-icon orange">
+                            ◉
+                        </div>
+
+                        <span class="kpi-label">
+                            HIGH RISK
+                        </span>
+
+                    </div>
+
+                    <div class="kpi-value">
+
+                        <strong id="highRiskCount">
+                            —
+                        </strong>
+
+                    </div>
+
+                    <div class="kpi-footer">
+                        Predictions evaluated as High
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-card-top">
+
+                        <div class="kpi-icon green">
+                            ✓
+                        </div>
+
+                        <span class="kpi-label">
+                            ML MODELS
+                        </span>
+
+                    </div>
+
+                    <div class="kpi-value">
+
+                        <strong>
+                            5
+                        </strong>
+
+                    </div>
+
+                    <div class="kpi-footer">
+                        Local classification models
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="quick-grid">
+
+                <button
+                    class="quick-card"
+                    onclick="scrollToSection('fields')"
+                >
+
+                    <div class="quick-icon">
+                        +
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Configure Field
+                        </strong>
+
+                        <span>
+                            Add a dynamic machine parameter
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="quick-card"
+                    onclick="scrollToSection('machines')"
+                >
+
+                    <div class="quick-icon">
+                        ⚙
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Add Machine
+                        </strong>
+
+                        <span>
+                            Create a new machine record
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="quick-card"
+                    onclick="scrollToSection('prediction')"
+                >
+
+                    <div class="quick-icon">
+                        ◉
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Run Prediction
+                        </strong>
+
+                        <span>
+                            Analyze machine risk
+                        </span>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FIELD CONFIGURATION
+        ================================================== -->
+
+        <section
+            id="fields"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        CONFIGURATION
+                    </span>
+
+                    <h2>
+                        Machine Fields
+                    </h2>
+
+                    <p>
+                        Define the dynamic fields used to
+                        capture machine information.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary"
+                    onclick="toggleFieldForm()"
+                >
+                    + Add Field
+                </button>
+
+            </div>
+
+
+            <div
+                id="fieldFormContainer"
+                class="form-panel hidden"
+            >
+
+                <form id="fieldForm">
+
+                    <div class="form-grid">
+
+
+                        <div class="form-control">
+
+                            <label>
+                                Field Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fieldName"
+                                placeholder="e.g. Temperature"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-control">
+
+                            <label>
+                                Field Type
+                            </label>
+
+                            <select
+                                id="fieldType"
+                                required
+                            >
+
+                                <option value="text">
+                                    Text
+                                </option>
+
+                                <option value="number">
+                                    Number
+                                </option>
+
+                                <option value="dropdown">
+                                    Dropdown
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-control checkbox-control">
+
+                            <label>
+
+                                <input
+                                    type="checkbox"
+                                    id="fieldRequired"
+                                >
+
+                                Required field
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="dropdownOptionsGroup"
+                        class="form-control hidden"
+                    >
+
+                        <label>
+                            Dropdown Options
+                        </label>
+
+                        <input
+                            type="text"
+                            id="dropdownOptions"
+                            placeholder="Low, Medium, High"
+                        >
+
+                        <small>
+                            Separate options using commas.
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            onclick="cancelFieldForm()"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Save Field
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <div class="data-card">
+
+                <div class="table-header">
+
+                    <div>
+                        <strong>
+                            Configured Parameters
+                        </strong>
+
+                        <span>
+                            Dynamic schema configuration
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    FIELD
+                                </th>
+
+                                <th>
+                                    TYPE
+                                </th>
+
+                                <th>
+                                    REQUIRED
+                                </th>
+
+                                <th>
+                                    OPTIONS
+                                </th>
+
+                                <th>
+                                    ACTION
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody
+                            id="fieldsTableBody"
+                        ></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MACHINE MANAGEMENT
+        ================================================== -->
+
+        <section
+            id="machines"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        MACHINE DATA
+                    </span>
+
+                    <h2>
+                        Machine Management
+                    </h2>
+
+                    <p>
+                        Create and manage machines using
+                        the configured dynamic fields.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="data-card machine-create-card">
+
+                <div class="table-header">
+
+                    <div>
+
+                        <strong>
+                            Machine Information
+                        </strong>
+
+                        <span>
+                            Dynamic machine data entry
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <form id="machineForm">
+
+                    <div
+                        id="machineFields"
+                        class="machine-fields"
+                    >
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                ⚙
+                            </div>
+
+                            <h3>
+                                No machine fields configured
+                            </h3>
+
+                            <p>
+                                Add fields above to start
+                                creating machines.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Save Machine
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <div class="data-card">
+
+                <div class="table-header">
+
+                    <div>
+
+                        <strong>
+                            Machine Records
+                        </strong>
+
+                        <span>
+                            Registered machines
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    MACHINE
+                                </th>
+
+                                <th>
+                                    PARAMETERS
+                                </th>
+
+                                <th>
+                                    ACTION
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody
+                            id="machinesTableBody"
+                        ></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PREDICTION
+        ================================================== -->
+
+        <section
+            id="prediction"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        LOCAL ML ENGINE
+                    </span>
+
+                    <h2>
+                        Risk Prediction
+                    </h2>
+
+                    <p>
+                        Select a machine and model to
+                        perform local Python ML analysis.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="prediction-workspace">
+
+
+                <div class="prediction-controls-card">
+
+                    <div class="prediction-card-header">
+
+                        <div class="prediction-engine-icon">
+                            ◉
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Prediction Engine
+                            </strong>
+
+                            <span>
+                                Powered by local Python ML
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="prediction-form">
+
+
+                        <div class="form-control">
+
+                            <label>
+                                Select Machine
+                            </label>
+
+                            <select
+                                id="predictionMachine"
+                            >
+
+                                <option value="">
+                                    Select a machine
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-control">
+
+                            <label>
+                                Select ML Model
+                            </label>
+
+                            <select
+                                id="predictionModel"
+                            >
+
+                                <option value="random_forest">
+                                    Random Forest
+                                </option>
+
+                                <option value="decision_tree">
+                                    Decision Tree
+                                </option>
+
+                                <option value="gradient_boosting">
+                                    Gradient Boosting
+                                </option>
+
+                                <option value="extra_trees">
+                                    Extra Trees
+                                </option>
+
+                                <option value="logistic_regression">
+                                    Logistic Regression
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            id="predictButton"
+                            class="btn btn-predict"
+                            type="button"
+                        >
+
+                            <span>
+                                ◉
+                            </span>
+
+                            Run Risk Prediction
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PREDICTION RESULT -->
+
+                <div
+                    id="predictionResult"
+                    class="prediction-result hidden"
+                >
+
+                    <div class="prediction-result-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                PREDICTION RESULT
+                            </span>
+
+                            <h3>
+                                Machine Risk Assessment
+                            </h3>
+
+                        </div>
+
+
+                        <div
+                            id="riskLevel"
+                            class="risk-badge"
+                        ></div>
+
+                    </div>
+
+
+                    <div
+                        id="predictionDetails"
+                        class="prediction-details"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ML MODELS
+        ================================================== -->
+
+        <section
+            id="models"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        MACHINE LEARNING
+                    </span>
+
+                    <h2>
+                        ML Models
+                    </h2>
+
+                    <p>
+                        Five local classification models
+                        are available for machine risk analysis.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="model-grid">
+
+
+                <div class="model-card">
+
+                    <div class="model-card-icon">
+                        RF
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Random Forest
+                        </strong>
+
+                        <span>
+                            Ensemble classification
+                        </span>
+
+                    </div>
+
+                    <div class="model-status">
+                        READY
+                    </div>
+
+                </div>
+
+
+                <div class="model-card">
+
+                    <div class="model-card-icon">
+                        DT
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Decision Tree
+                        </strong>
+
+                        <span>
+                            Rule-based classification
+                        </span>
+
+                    </div>
+
+                    <div class="model-status">
+                        READY
+                    </div>
+
+                </div>
+
+
+                <div class="model-card">
+
+                    <div class="model-card-icon">
+                        GB
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Gradient Boosting
+                        </strong>
+
+                        <span>
+                            Sequential ensemble
+                        </span>
+
+                    </div>
+
+                    <div class="model-status">
+                        READY
+                    </div>
+
+                </div>
+
+
+                <div class="model-card">
+
+                    <div class="model-card-icon">
+                        ET
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Extra Trees
+                        </strong>
+
+                        <span>
+                            Randomized ensemble
+                        </span>
+
+                    </div>
+
+                    <div class="model-status">
+                        READY
+                    </div>
+
+                </div>
+
+
+                <div class="model-card">
+
+                    <div class="model-card-icon">
+                        LR
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Logistic Regression
+                        </strong>
+
+                        <span>
+                            Linear classification
+                        </span>
+
+                    </div>
+
+                    <div class="model-status">
+                        READY
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="model-info-card">
+
+                <div class="info-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <strong>
+                        Local ML Architecture
+                    </strong>
+
+                    <p>
+                        All models are trained locally using
+                        30,000 synthetic machine records.
+                        Predictions run locally through Python
+                        without external AI APIs or cloud services.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="footer">
+
+            <span>
+                MachineRisk Intelligence
+            </span>
+
+            <span>
+                Local ML • SQLite • FastAPI
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+    ></div>
+
+
+    <script src="/static/app.js"></script>
+
+</body>
+
+</html>

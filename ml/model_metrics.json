@@ -1,0 +1,22 @@
+{
+    "Random Forest": {
+        "accuracy": 1.0,
+        "model_file": "random_forest.pkl"
+    },
+    "Decision Tree": {
+        "accuracy": 1.0,
+        "model_file": "decision_tree.pkl"
+    },
+    "Gradient Boosting": {
+        "accuracy": 1.0,
+        "model_file": "gradient_boosting.pkl"
+    },
+    "Extra Trees": {
+        "accuracy": 0.998833,
+        "model_file": "extra_trees.pkl"
+    },
+    "Logistic Regression": {
+        "accuracy": 0.850167,
+        "model_file": "logistic_regression.pkl"
+    }
+}
